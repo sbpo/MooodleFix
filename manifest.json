@@ -13,10 +13,14 @@
   "content_scripts": [
     {
       "matches": ["https://www.moodle.aau.dk/*", "http://www.moodle.aau.dk/*"],
-      "css": ["moodlestyle.css"],
-      "js": ["myscript.js"],
+      "css": ["fullcalendar.min.css", "moodlestyle.css"],
+      "js": ["jquery.min.js", "moment.min.js", "fullcalendar.min.js", "myscript.js"],
       "all_frames": true,
       "run_at": "document_end"
     }
-  ]
+  ],
+  "background": {
+    "scripts": ["jquery.min.js", "moment.min.js", "fullcalendar.min.js"],
+    "persistent": false
+  }
 }
