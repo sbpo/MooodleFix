@@ -6,6 +6,26 @@ body {
   padding-top: 50px!important;
 }
 
+#page-footer {
+  display:none;
+}
+
+.title h2 {
+  margin: 20px 0px;
+  display:block!important;
+  padding:0!important;
+  text-align: center;
+}
+
+.block {
+  box-shadow:none!important;
+  background: none!important;
+}
+
+#mycourses_container {
+  background:none!important;
+}
+
 .ui-tabs-nav{
   margin-left: 5px!important;
   margin-bottom: 5px!important;
@@ -40,15 +60,27 @@ body {
   font-size: 1.5em;
 }
 
+.coursebox .teacher_info {
+  margin:0!important;
+  padding:0!important;
+  text-indent: 0!important;
+}
+
 .coursebox .teacher_info.teacher_info:nth-child(4) {
   display:none!important;
 }
 
 .semester_category{
   border: 0px!important;
+  width:1200px;
+  margin:0 auto!important;
+  padding:0!important;
 }
+
 #region-bs-main-and-post{
-  background-color: #eee;
+  background: none;
+  width:100%;
+  float:none!important;
 }
 
 #mycourses_container{
@@ -64,12 +96,11 @@ body {
 }
 
 .block_action {
-  display: none;
+  display: none!important;
 }
 
 .almaincontent {
-  box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);
-  border-radius: 15px;
+  background: none!important;
 }
 
 .box.coursebox {
@@ -80,24 +111,73 @@ body {
   padding-top: 0;
   /* margin: 20px; */
   padding: 20px;
-  /*box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.07);*/
-
+  box-shadow: 0 0px 3px rgba(50,50,93,.15);
   border-radius: 10px;
-  width:50%;
   float:left;
-  height:120px;
+  height:180px;
+  background:#fff;
+  margin: 20px;
+  width: 260px!important;
+  cursor: pointer;
+}
+
+@media (max-width:1350px) {
+  .semester_category{
+    width:900px;
+  }
+
+  .box.coursebox {
+    width: 260px!important;
+  }
+}
+
+@media (max-width:1050px) {
+  .semester_category{
+    width:600px;
+  }
+
+  .box.coursebox {
+    width: 260px!important;
+  }
+}
+
+#semester_category_header {
+  position: relative;
+  height: 40px;
+  padding:0;
 }
 
 #semester_category_header li {
   display:none;
+  position:absolute;
+  width:200px;
+  left:50%;
+  height:100%;
+  text-align: center;
+  border: 0!important;
+  margin:0; padding:0!important;
+  overflow: hidden;
+  box-shadow: 0 0px 3px rgba(50,50,93,.15);
 }
 
 #semester_category_header li:nth-child(1) {
   display:block;
+  border-radius: 0px 5px 5px 0px;
 }
 
 #semester_category_header li:nth-child(2) {
   display:block;
+  margin-left: -200px;
+
+
+}
+
+#semester_category_header li a {
+    width: 200px;
+    margin: 0;
+    padding: 0;
+    line-height: 40px;
+    background:#fff;
 }
 
 .block_mycourses .ui-tabs .ui-tabs-panel.semester_category {
@@ -121,8 +201,7 @@ div.coursebox:hover, div.coursebox:active {
 }
 
 #region-bs-main-and-post {
-  width:100%;
-  float:none!important;
+
 }
 .logo {
   background-color: #888;

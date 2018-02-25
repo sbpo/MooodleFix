@@ -7,3 +7,15 @@
     console.log(elements[i].className);
   }
 });*/
+
+(() => {
+  document.getElementsByTagName("title")[0].innerHTML = "AAU Moodle";
+  document.body.onclick = (e) => {
+    let el = e.target;
+    if(el.classList.contains("coursebox")) {
+      let url = el.children[1].children[0].getAttribute("href");
+      window.location.href=url;
+      console.log(url);
+    }
+  }
+})();
