@@ -41,24 +41,19 @@
     sections[i].appendChild(button);
   }
 
-
-  let ifrm = document.createElement("iframe");
-  ifrm.setAttribute("src", "https://www.moodle.aau.dk/calendar/view.php");
-  ifrm.style.width = "640px";
-  ifrm.style.height = "480px";
-  ifrm.style.display = "none";
-  ifrm.id = "ifrm";
-  window.self !== window.top || document.body.appendChild(ifrm); //checker om man er inde i en iframe
-  ifrm.onload = () => {
-    var innerDoc = ifrm.contentDocument || ifrm.contentWindow.document;
-    let icallink = innerDoc.getElementsByClassName("ical-link")[0].getAttribute("href");
+  let cont = document.createElement("div");
+  cont.style.display="none";
+  window.top !== window.self || $(cont).load('https://www.moodle.aau.dk/calendar/view.php', () => {
+    //var innerDoc = ifrm.contentDocument || ifrm.contentWindow.document;
+    //let icallink = innerDoc.getElementsByClassName("ical-link")[0].getAttribute("href");
+    let icallink = cont.getElementsByClassName("ical-link")[0].getAttribute("href");
     fetch("https://kontinemt.dk/ical?url=" + encodeURIComponent(icallink)).then((res) => {
       return res.json();
     }).then((json) => {
       console.log(json.VCALENDAR[0])
       let cal = document.createElement("div");
       cal.id = "calendar";
-      document.body.appendChild(cal);
+      document.getElementsByClassName("almaincontent")[0].appendChild(cal);
       $(cal).fullCalendar({
           defaultView: 'agendaWeek',
           events: json.VCALENDAR[0].VEVENT.map((e) => ({
@@ -66,6 +61,7 @@
             start: moment(e.DTSTART).format(),
             end: moment(e.DTEND).format(),
           })),
+          height: "auto",
           views: {
             basic: {
                 minTime: "08:00:00",
@@ -87,6 +83,6 @@
 
 
     });
-  }
+  });
 
 })();
