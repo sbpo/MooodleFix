@@ -1,0 +1,19 @@
+{
+  "name": "AAU moodle fIXr",
+  "description" : "This extension will shine up moodle!",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "hello.html",
+    "default_title": "I fix moodle up"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.moodle.aau.dk/*", "http://www.moodle.aau.dk/*"],
+      "css": ["moodlestyle.css"],
+      "js": ["myscript.js"],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ]
+}
