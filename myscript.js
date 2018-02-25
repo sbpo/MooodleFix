@@ -18,4 +18,15 @@
       console.log(url);
     }
   }
+  
+  if(window.location.href != "https://www.moodle.aau.dk/my/"){
+    let logo = document.querySelector('div.logo');
+    let link = document.createElement("a");
+    link.setAttribute("href", "https://www.moodle.aau.dk/my/");
+    logo.parentNode.insertBefore(link, logo);
+    link.appendChild(logo); 
+  } 
+
+
+
 })();
