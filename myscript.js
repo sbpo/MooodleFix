@@ -41,6 +41,7 @@
     sections[i].appendChild(button);
   }
 
+
   let cont = document.createElement("div");
   cont.style.display="none";
   window.top !== window.self || $(cont).load('https://www.moodle.aau.dk/calendar/view.php', () => {

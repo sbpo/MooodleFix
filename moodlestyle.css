@@ -66,6 +66,9 @@ body {
   margin:0!important;
   padding:0!important;
   text-indent: 0!important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .coursebox .teacher_info.teacher_info:nth-child(4) {
@@ -146,7 +149,7 @@ body {
 
 #semester_category_header {
   position: relative;
-  height: 40px;
+  height: 80px;
   padding:0;
 }
 
@@ -155,7 +158,7 @@ body {
   position:absolute;
   width:200px;
   left:50%;
-  height:100%;
+  height:50%;
   text-align: center;
   border: 0!important;
   margin:0; padding:0!important;
@@ -171,8 +174,25 @@ body {
 #semester_category_header li:nth-child(2) {
   display:block;
   margin-left: -200px;
+  border-radius: 5px 0px 0px 5px;
+}
 
+.tabswrapper{
+  display: block;
+  position: relative;
+  margin-top: 40px;
+}
 
+#semester_category_header li:nth-child(n+3){
+  display: block;
+  position: relative;
+  margin-top: 40px;
+  width: 60px;
+}
+
+#semester_category_header li:nth-child(n+3) a{
+  padding-left: 10px;
+  width: 60px;
 }
 
 #semester_category_header li a {
