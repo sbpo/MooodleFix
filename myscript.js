@@ -13,7 +13,9 @@ const liCss = {
   position: "relative",
   height: "40px",
   width: "60px",
-  "border-radius": "0px, 0px, 0px, 0px" 
+  borderRadius: "0px, 0px, 0px, 0px",
+  "margin-left": "0px",
+  left: "0px"
 };
 
 
@@ -66,6 +68,11 @@ const liCss = {
     let uiTabs = $(".ui-tabs-tab").slice(2);
     uiTabs.css(liCss).wrapAll('<div class="tabswrapper"></div>');
 
+    //fix text ændringer
+    $.each(uiTabs.children(), (i, child)=>{
+      child.setAttribute("orgtext", child.innerHTML);
+    });
+
     //ninjafix:
     let width = $(".tabswrapper").width();
     uiTabs.css({
@@ -74,6 +81,15 @@ const liCss = {
     uiTabs.children().css({
       width: width / uiTabs.length
     });
+
+    uiTabs.first().css({
+      "border-radius": "0px, 5px, 5px, 0px!important",
+    });
+    uiTabs.last().css({
+      "border-radius": "5px, 0px, 0px, 5px!important"
+    });
+    console.log(uiTabs.first());
+
 
   });
   
