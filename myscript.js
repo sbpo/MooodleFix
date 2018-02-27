@@ -83,10 +83,10 @@ const liCss = {
     });
 
     uiTabs.first().css({
-      "border-radius": "0px, 5px, 5px, 0px!important",
+      borderRadius: "0px, 5px, 5px, 0px!important",
     });
     uiTabs.last().css({
-      "border-radius": "5px, 0px, 0px, 5px!important"
+      borderRadius: "5px, 0px, 0px, 5px!important"
     });
     console.log(uiTabs.first());
 
