@@ -21,6 +21,19 @@ body {
   /* align-items: center !important; */
   /* justify-content: space-between !important; */
 }
+.navbar .nav{
+  float: right!important;
+}
+@media (max-width: 820px){
+  .langmenu{
+    display: none!important;
+  }
+}
+@media (max-width: 770px){
+  .nav li:nth-child(5){
+    display: none!important;
+  }
+}
 
 .caret {
   border-top-color: #D9E2EC !important;
@@ -41,8 +54,7 @@ a:hover {
 }
 
 .ui-state-active:hover a {
-  color: #fff !important;
-  cursor:pointer;
+  color: rgb(78, 78, 78) !important;
 }
 
 .userbutton {
@@ -97,25 +109,12 @@ a:hover {
 }
 
 .content {
-  padding: 15px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
+  padding: 5px !important;
   align-items: center !important;
   margin-right: 0;
 }
 
-/* #mycoursestextfilter {
-  background: #EAEEF1 !important;
-  box-shadow: inset 0 1px 2px 0 rgba(39,83,134,0.10) !important;
-  border-radius: 100px !important;
-  border: none !important;
-  padding-left: 10px !important;
-  font-family: AvenirNext-DemiBold !important;
-  font-size: 10px !important;
-  color: #83909A !important;
-  text-align: center;
-} */
+
 
 #mycoursestextfilter {
   display: none !important;
@@ -136,8 +135,8 @@ a:hover {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  height: 120px;
   padding:10px;
+  margin-bottom: 5px;
 
 }
 
@@ -164,15 +163,13 @@ a:hover {
 
 .ui-tabs-active, .ui-state-active {
   /* Rectangle 7: */
-background: #4A90E2 !important;
-box-shadow: 0 2px 7px 0 rgba(74,144,226,0.72) !important;
+background: rgb(241,247,255) !important;
+box-shadow: 0 2px 7px 0 rgba(74,144,226,0.32) !important;
 border-radius: 5px;
 font-family: AvenirNext-DemiBold !important;
 font-size: 15px !important;
-color: #FFFFFF !important;
 }
 .ui-tabs-active a, .ui-state-active a {
-  color: #FFFFF!important;
 }
 
 .ui-tabs, .ui-tabs-anchor {
@@ -181,33 +178,15 @@ color: #FFFFFF !important;
   color: #BEC7CF !important;
 }
 
-/* #semester_category_header li:nth-child(1) {
-  background: #26C775 !important;
-  box-shadow: 0 2px 7px 0 rgba(37,38,38,0.24);
-  border-radius: 5px;
-  font-family: AvenirNext-DemiBold !important;
-  color: #FFF !important;
+
+#calendar{
+    margin-top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 15px 0px;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
 }
-
-#semester_category_header li:nth-child(2) {
-  background: #26C775 !important;
-  box-shadow: 0 2px 7px 0 rgba(37,38,38,0.24);
-  border-radius: 5px;
-  font-family: AvenirNext-DemiBold !important;
-  color: #fff !important;
-} */
-
-/* .tabswrapper{
-  display: block;
-  position: relative;
-  height: 40px;
-  margin:0; padding:0!important;
-  margin-top: 45px!important;
-  left: 50%;
-  width: 800px;
-  margin-left: -300px;
-} */
-
 
 #semester_category_header li a {
     display: flex !important;
@@ -221,6 +200,13 @@ color: #FFFFFF !important;
   border: none !important;
   margin:0 auto!important;
   padding:0!important;
+
+}
+#mycourses_container [aria-hidden="false"]{
+  position: relative!important;
+  display: flex!important;
+  justify-content: center!important;
+  flex-wrap: wrap!important;
 }
 
 .coursebox {
@@ -263,9 +249,12 @@ color: #FFFFFF !important;
   float:left!important;
   height:180px!important;
   background:#fff;
-  margin: 20px!important;
+  margin: 10px!important;
   width: 260px!important;
   cursor: pointer;
+}
+.coursebox h2{
+  font-size: 15px;
 }
 
 /* Fjerner ting */
@@ -293,4 +282,64 @@ color: #FFFFFF !important;
 
 .block_action {
   display: none !important;
+}
+
+.fc-time-grid-event{
+  background-color: rgb(69, 153, 178);
+  border-color: rgb(69, 153, 178);
+
+}
+.fc-content{
+  color: white;
+}
+
+.fc-head{
+  background-color: #fafafa;
+}
+
+.block_mycourses{
+  padding: 0px;
+}
+.teacher_info{
+  width: 200px!important;
+  text-overflow: ellipsis!important;
+  white-space: nowrap!important;
+  overflow: hidden!important;
+}
+.teacher_info:nth-of-type(2){
+  display: none;
+}
+
+
+
+/* cource content */
+.section .content {
+  max-height:100px;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.section .content.open {
+  max-height:1000px;
+}
+
+.section .content {
+  position : relative;
+}
+.section .content:not(.open):after {
+  content  : "";
+  position : absolute;
+  z-index  : 1;
+  bottom   : 0;
+  left     : 0;
+  pointer-events   : none;
+  background-image : linear-gradient(to bottom,
+                    rgba(237,240,244, 0),
+                    rgba(237,240,244, 1) 90%);
+  width    : 100%;
+  height   : 4em;
+}
+
+.fc-day-grid{
+  display: none;
 }

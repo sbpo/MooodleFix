@@ -13,26 +13,22 @@
 
 (() => {
   document.getElementsByTagName("title")[0].innerHTML = "AAU Moodle";
-  document.body.onclick = (e) => {
-    //let el = e.target;
-    e.path.forEach((el) => {
-      //let el = ev.target;
-      if(el.classList.contains("coursebox")) {
-        let url = el.children[1].children[0].getAttribute("href");
-        window.location.href=url;
-        console.log(url);
-        return;
-      }
-    })
+  if(window.location.href == "https://www.moodle.aau.dk/my/"){
+    document.body.onclick = (e) => {
+      //let el = e.target;
+      e.path.forEach((el) => {
+        //let el = ev.target;
+        if(el.classList.contains("coursebox")) {
+          let url = el.children[1].children[0].getAttribute("href");
+          window.location.href=url;
+          console.log(url);
+          return;
+        }
+      })
+    }
   }
 
-  if(window.location.href != "https://www.moodle.aau.dk/my/"){
-    let logo = document.querySelector('div.logo');
-    let link = document.createElement("a");
-    link.setAttribute("href", "https://www.moodle.aau.dk/my/");
-    logo.parentNode.insertBefore(link, logo);
-    link.appendChild(logo);
-  }
+
 
   let sections = document.getElementsByClassName("section main");
   let button;
