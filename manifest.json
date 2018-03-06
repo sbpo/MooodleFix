@@ -1,7 +1,7 @@
 {
   "name": "AAU Moodle FIX",
   "description" : "This extension will shine up moodle for students at Aalborg University!",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "hello.html",
