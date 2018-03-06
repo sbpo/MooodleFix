@@ -8,26 +8,22 @@
   }
 });*/
 
-const liCss = {
-  display: "block",
-  position: "relative",
-  height: "40px",
-  width: "60px",
-  borderRadius: "0px, 0px, 0px, 0px",
-  "margin-left": "0px",
-  left: "0px"
-};
+
 
 
 (() => {
   document.getElementsByTagName("title")[0].innerHTML = "AAU Moodle";
   document.body.onclick = (e) => {
-    let el = e.target;
-    if(el.classList.contains("coursebox")) {
-      let url = el.children[1].children[0].getAttribute("href");
-      window.location.href=url;
-      console.log(url);
-    }
+    //let el = e.target;
+    e.path.forEach((el) => {
+      //let el = ev.target;
+      if(el.classList.contains("coursebox")) {
+        let url = el.children[1].children[0].getAttribute("href");
+        window.location.href=url;
+        console.log(url);
+        return;
+      }
+    })
   }
 
   if(window.location.href != "https://www.moodle.aau.dk/my/"){
@@ -53,46 +49,46 @@ const liCss = {
   }
 
   $(document).ready(()=>{
-    let uiTab = document.getElementsByClassName("ui-tabs-tab");
+    const smallTabs = ()=>{
+      let uiTab = document.getElementsByClassName("ui-tabs-tab");
+      for(let i=2; i < uiTab.length; i++){
+        let mText = uiTab[i].children[0].innerHTML;
+        let text = mText.slice(0, 1);
+        text += "-";
+        text += mText.slice(mText.length-2, mText.length);
+        uiTab[i].children[0].innerHTML = text;
+      }
 
+      //console.log($(".ui-tabs-tab").slice(2));
+      let uiTabs = $(".ui-tabs-tab").slice(2);
+      uiTabs.css(liCss).wrapAll('<div class="tabswrapper"></div>');
 
-    for(let i=2; i < uiTab.length; i++){
-      let mText = uiTab[i].children[0].innerHTML;
-      let text = mText.slice(0, 1);
-      text += "-";
-      text += mText.slice(mText.length-2, mText.length);
-      uiTab[i].children[0].innerHTML = text;
+      //fix text ændringer
+      $.each(uiTabs.children(), (i, child)=>{
+        child.setAttribute("orgtext", child.innerHTML);
+      });
+
+      //ninjafix:
+      let width = $(".tabswrapper").width();
+      uiTabs.css({
+          width: width / uiTabs.length
+      });
+      uiTabs.children().css({
+        width: width / uiTabs.length
+      });
+
+      uiTabs.first().css({
+        "border-radius": "0px, 5px, 5px, 0px!important",
+      });
+      uiTabs.last().css({
+        "border-radius": "5px, 0px, 0px, 5px!important"
+      });
+      console.log(uiTabs.first());
     }
 
-    //console.log($(".ui-tabs-tab").slice(2));
-    let uiTabs = $(".ui-tabs-tab").slice(2);
-    uiTabs.css(liCss).wrapAll('<div class="tabswrapper"></div>');
-
-    //fix text ændringer
-    $.each(uiTabs.children(), (i, child)=>{
-      child.setAttribute("orgtext", child.innerHTML);
-    });
-
-    //ninjafix:
-    let width = $(".tabswrapper").width();
-    uiTabs.css({
-        width: width / uiTabs.length
-    });
-    uiTabs.children().css({
-      width: width / uiTabs.length
-    });
-
-    uiTabs.first().css({
-      borderRadius: "0px, 5px, 5px, 0px!important",
-    });
-    uiTabs.last().css({
-      borderRadius: "5px, 0px, 0px, 5px!important"
-    });
-    console.log(uiTabs.first());
-
-
+    //$(".ui-tabs-anchor").removeClass( 'ui-tabs-anchor' )
   });
-  
+
   if(window.location.href == "https://www.moodle.aau.dk/my/"){
     let cont = document.createElement("div");
     cont.style.display="none";
