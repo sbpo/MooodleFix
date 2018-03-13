@@ -30,19 +30,7 @@
 
 
 
-  let sections = document.getElementsByClassName("section main");
-  let button;
-  for(let i = 0; i<sections.length; i++) {
-    button = document.createElement("button");
-    button.innerHTML = "Vis mere";
-    button.className = "show-more";
-    button.onclick = (e) => {
-      let content = e.target.parentElement.getElementsByClassName("content")[0]
-      content.className = content.className.includes("open") ? "content" : "content open";
-      e.target.innerHTML = content.className.includes("open") ? "Vis mindre" : "Vis mere";
-    };
-    sections[i].appendChild(button);
-  }
+
 
   $(document).ready(()=>{
     const smallTabs = ()=>{

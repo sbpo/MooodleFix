@@ -1,0 +1,90 @@
+body {
+  background-color: #EDF0F4 !important;
+  color: #222!important;
+  font-size: 14px;
+  font-family: "Avenir", Helvetica,sans-serif!important;
+  background-image: none !important;
+}
+
+#login {
+  width: 400px !important;
+  background: #FFFFFF;
+  box-shadow: 0 4px 15px 0 rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding-top: 15px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  padding-bottom: 5px !important;
+  position: relative !important;
+}
+
+.section {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-content: center !important;
+}
+
+.left h1 {
+  font-family: "AvenirNext-Bold" !important;
+  font-size: 28px;
+  color: #49545D !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  line-height: 28px !important;
+  margin-bottom: 5px !important;
+  /* Ulrik Stoch Jensen: */
+}
+
+.left p {
+  display: none !important;
+}
+
+.row label {
+font-family: "AvenirNext-DemiBold" !important;
+font-size: 10px !important;
+color: #C6CED6 !important;
+text-transform: uppercase !important;
+}
+
+.row input {
+  background: #F2F3F6;
+  border-radius: 6px !important;
+  height: 50px !important;
+  border: none !important;
+
+}
+
+.btn {
+  background: #66BB6A !important;
+  border-radius: 6px !important;
+  width: 100% !important;
+  font-family: "AvenirNext-DemiBold" !important;
+  color: #fff !important;
+  text-transform: none!important;
+  cursor: pointer !important;
+  -webkit-transition: transform 0.3s, background-color 0.3s !important;
+}
+
+.btn:hover {
+  transform: scale(1.01);
+  background-color: #79CE7D !important;
+}
+
+btn:active {
+  transform: scale(0.98);
+  background-color: #5BAB5F !important;
+}
+
+.forgotPass, .forgotPass a {
+  color: #C6CED6 !important;
+  text-align: right !important;
+  margin-top: 5px !important;
+  position: relative !important;
+  top: 0px !important;
+
+}
+
+#servicemenu, #notices, .isCentered, .bg-img, .right {
+  display: none !important;
+}

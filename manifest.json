@@ -1,7 +1,7 @@
 {
   "name": "AAU Moodle FIX",
   "description" : "This extension will shine up moodle for students at Aalborg University!",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "hello.html",
@@ -15,6 +15,12 @@
       "matches": ["https://www.moodle.aau.dk/*", "http://www.moodle.aau.dk/*"],
       "css": ["fullcalendar.min.css", "moodlestyle.css"],
       "js": ["jquery.min.js", "moment.min.js", "fullcalendar.min.js", "myscript.js"],
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["https://signon.aau.dk/*", "http://signon.aau.dk/*"],
+      "css": ["signonstyle.css"],
       "all_frames": true,
       "run_at": "document_end"
     }

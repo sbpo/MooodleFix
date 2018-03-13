@@ -1,5 +1,5 @@
 body {
-  background-color: #EDF0F4 !important;
+  background-color: #ecf0f1 !important;
   color: #222!important;
   font-size: 14px;
   font-family: "Avenir", Helvetica,sans-serif!important;
@@ -21,6 +21,7 @@ body {
   /* align-items: center !important; */
   /* justify-content: space-between !important; */
 }
+
 .navbar .nav{
   float: right!important;
 }
@@ -91,6 +92,7 @@ a:hover {
   display: flex;
   justify-content: center;
   border-radius: 10px !important;
+  border: none !important;
 }
 
 #instance-350694-header {
@@ -100,17 +102,31 @@ a:hover {
   color: #4A90E2 !important;
 }
 
-.block {
-  background: rgba(0,0,0,0);
+.block-region, .block, .block_mycourses {
+  background: rgba(255,255,255,0.00)!important;
+  /* box-shadow: 0 4px 15px 0 rgba(0,0,0,0.08) !important; */
+  /* border-radius: 10px; */
+  /* background: rgba(0,0,0,0);
   box-shadow: 0 4px 15px 0 rgba(0,0,0,0.08);
   border-radius: 10px !important;
   padding: 10px !important;
   box-shadow: 0 4px 15px 0 rgba(0,0,0,0.08) !important;
+  background-image: linear-gradient(0deg, rgba(255,255,255,0.00) 0%, #FFFFFF 100%); */
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: column !important;
+  justify-content: space-around !important;
 }
 
+
 .content {
-  padding: 5px !important;
+  /* padding: 15px !important; */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
   align-items: center !important;
+  align-content: center !important;
   margin-right: 0;
 }
 
@@ -121,12 +137,13 @@ a:hover {
 }
 
 #mycourses_container {
-  margin-top: 17px !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center;
-  align-items: center;
+  justify-content: center !important;
+  align-items: center !important;
+  /* align-content: center !important; */
   border: none !important;
+  padding: none !important;
 }
 
 #semester_category_header {
@@ -135,47 +152,78 @@ a:hover {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  padding:10px;
-  margin-bottom: 5px;
+  height: 110px;
+  padding:10px !important;
+  /* Rectangle 5: */
+  background: rgba(255,255,255,0.00)!important;
+  /* box-shadow: 0 4px 15px 0 rgba(0,0,0,0.08) !important;
+  border-radius: 10px !important; */
+}
 
+@keyframes tabs-animation {
+  0%  {opacity: 0%}
+  100% {opacity: 100%}
 }
 
 #semester_category_header li {
   position: relative;
   border: 0!important;
-  /* margin:0; padding:0!important; */
+  margin:0; padding:0!important;
   overflow: hidden;
   text-align: center;
   border: 2px solid #D4DBE4;
   border-radius: 50px !important;
   margin-bottom: 15px !important;
   font-family: AvenirNext-DemiBold !important;
-  color: #BEC7CF; */
+  color: #BEC7CF;
+  transition: box-shadow 0.3s, background-color 0.3s !important;
+  background: rgba(255,255,255,0.3s);
+  box-shadow: 0 1px 2px 0 #DCE2EA;
+  border-radius: 40px !important;
 }
 
-#semester_category_header li::selection {
-  /* Rectangle 7: */
-  background: #4A90E2 !important;
-  box-shadow: 0 2px 7px 0 rgba(74,144,226,0.72) !important;
-  border-radius: 5px !important;
-  color: #FFFFFF !important;
+#semester_category_header li:hover {
+  /* Rectangle 9: */
+  background: #FFFFFF;
+  box-shadow: 0 3px 8px 0 #DCE2EA;
 }
 
-.ui-tabs-active, .ui-state-active {
-  /* Rectangle 7: */
-background: rgb(241,247,255) !important;
-box-shadow: 0 2px 7px 0 rgba(74,144,226,0.32) !important;
-border-radius: 5px;
-font-family: AvenirNext-DemiBold !important;
-font-size: 15px !important;
+.block_mycourses .ui-tabs .ui-tabs-panel.semester_category {
+  border: 0;
+  margin-top: 0;
 }
 .ui-tabs-active a, .ui-state-active a {
+  color: #FFFFF!important;
 }
 
-.ui-tabs, .ui-tabs-anchor {
+.ui-tabs {
   padding-top: 10px;
   font-family: AvenirNext-DemiBold !important;
   color: #BEC7CF !important;
+  background: rgba(255,255,255,0.00)!important;
+}
+
+.ui-tabs-tab a {
+  padding-top: 10px;
+  font-family: AvenirNext-DemiBold !important;
+  color: #BEC7CF !important;
+  display: flex !important;
+  align-content: center !important;
+  align-items: center !important;
+}
+
+#semester_category_header li a {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.semester_category {
+  width: 100% !important;
+  border: none !important;
+  margin:0 auto!important;
+  padding-left:20px !important;
+  background: rgba(255,255,255,0.00)!important;
 }
 
 
@@ -194,14 +242,12 @@ font-size: 15px !important;
     align-items: center !important;
 }
 
-.semester_category {
-
-  width: 100% !important;
-  border: none !important;
-  margin:0 auto!important;
-  padding:0!important;
-
+.title a {
+  font-family: "AvenirNext-DemiBold";
+  font-size: 14px;
+  color: #49545D !important;
 }
+
 #mycourses_container [aria-hidden="false"]{
   position: relative!important;
   display: flex!important;
@@ -211,8 +257,9 @@ font-size: 15px !important;
 
 .coursebox {
   display: flex !important;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between !important;
+  align-content: center! important;
+  align-items: center !important;
   flex-direction: column !important;
   padding-top:20px!important;
   padding-bottom:20px!important;
@@ -221,10 +268,14 @@ font-size: 15px !important;
   white-space: wrap!important;
   overflow: visible!important;
   padding: 10px;
-  float: left;
+  /* float: left; */
   width: 100%;
   border-radius: 8px !important;
-  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.18) !important;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.10) !important;
+  color: #474D51 !important;
+  -webkit-transition: box-shadow 0.2s;
+  -webkit-transition-timing-function: ease-in-out;
+  border: none !important;
 }
 
 .teacher_info {
@@ -236,25 +287,30 @@ font-size: 15px !important;
   overflow: hidden!important;
 }
 
+
 .box.coursebox {
   box-sizing: border-box!important;
   border: 0;
   border-bottom: 0;
   padding-bottom: 0!important;
   padding-top: 0!important;
-  /* margin: 20px; */
   padding: 20px!important;
-  box-shadow: 0 0px 3px rgba(50,50,93,.15);
+  /* box-shadow: 0 0px 3px rgba(50,50,93,.15); */
   border-radius: 10px;
   float:left!important;
   height:180px!important;
   background:#fff;
   margin: 10px!important;
-  width: 260px!important;
+  width: 380px!important;
   cursor: pointer;
 }
-.coursebox h2{
-  font-size: 15px;
+
+.almaincontent {
+  padding-top: 0px!important;
+  background: none !important;
+  border: none !important;
+  box-sizing: none !important;
+  /* background: none!important; */
 }
 
 /* Fjerner ting */
@@ -270,10 +326,6 @@ font-size: 15px !important;
   display:none;
 }
 
-.almaincontent {
-  padding-top: 0px!important;
-  background: none!important;
-}
 
 .fixedbackground {
   display: none;
@@ -312,34 +364,23 @@ font-size: 15px !important;
 
 
 
-/* cource content */
-.section .content {
-  max-height:100px;
-  transition: all 0.5s ease;
-  overflow: hidden;
-}
-
-.section .content.open {
-  max-height:1000px;
-}
 
 .section .content {
   position : relative;
 }
-.section .content:not(.open):after {
-  content  : "";
-  position : absolute;
-  z-index  : 1;
-  bottom   : 0;
-  left     : 0;
-  pointer-events   : none;
-  background-image : linear-gradient(to bottom,
-                    rgba(237,240,244, 0),
-                    rgba(237,240,244, 1) 90%);
-  width    : 100%;
-  height   : 4em;
-}
+
 
 .fc-day-grid{
   display: none;
+}
+
+@media (min-width: 1190px){
+  .row-fluid .span9{
+    width: 75%!important!important;
+  }
+}
+@media (max-width: 1190px){
+  .row-fluid .span9{
+    width: 100%!important;
+  }  
 }
